@@ -3,11 +3,9 @@ using System;
 
 namespace ClassLibrary1
 {
-    public class Znamky
+    public class Znamky: ATabulka
     {
-        [PrimaryKey, AutoIncrement]
-
-        public int Id { get; set; }
+        
         public int IdPredmet { get; set; }
         public int Znamka { get; set; }
         public int Vaha { get; set; }

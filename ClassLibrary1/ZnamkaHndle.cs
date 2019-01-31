@@ -7,10 +7,11 @@ namespace ClassLibrary1
 {
     public class ZnamkaHndle
     {
-        public static async Task PridatUpravitZnamku(Znamky znamka)
+        /*
+        public static async Task PridatUpravit<T>(T Item) where T : ATabulka, new()
         {
 
-            await Tabulka.Database.SaveItemAsync(znamka);
+            await Tabulka.Database.SaveItemAsync(Item);
 
         }
         public static async Task<Znamky> ZiskatZnamku(int znamka)
@@ -37,6 +38,6 @@ namespace ClassLibrary1
         {
             await Tabulka.Database.DeleteItemAsync(znamka);
 
-        }
+        }*/
     }
 }

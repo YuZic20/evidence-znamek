@@ -5,10 +5,9 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Predmet: ATabulka
+    public abstract class ATabulka
     {
-
-        public string Nazev { get; set; }
-
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
     }
 }

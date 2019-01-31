@@ -9,15 +9,15 @@ namespace ClassLibrary1
     public class Tabulka
     {
         
-        static ZnamkyDatabase database;
+        static Database database;
 
-        public static ZnamkyDatabase Database
+        public static Database Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new ZnamkyDatabase(
+                    database = new Database(
                       Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Znamky85_SQLite.db3"));
                 }
                 return database;
