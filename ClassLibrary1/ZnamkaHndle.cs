@@ -7,37 +7,37 @@ namespace ClassLibrary1
 {
     public class ZnamkaHndle
     {
-        /*
+        
         public static async Task PridatUpravit<T>(T Item) where T : ATabulka, new()
         {
 
             await Tabulka.Database.SaveItemAsync(Item);
 
         }
-        public static async Task<Znamky> ZiskatZnamku(int znamka)
+        public static async Task<T> Ziskat<T>(int znamka) where T : ATabulka, new()
         {
 
-            Znamky getznamka;
+            T getznamka;
 
-            getznamka = await Tabulka.Database.GetItemAsync(znamka);
+            getznamka = await Tabulka.Database.GetItemAsync<T>(znamka);
 
             return getznamka;
 
         }
-        public static async Task<List<Znamky>> ZiskatZnamky()
+        public static async Task<List<T>> Ziskat<T>() where T : ATabulka, new()
         {
 
-            List<Znamky> getznamka;
+            List<T> getznamka;
 
-            getznamka = await Tabulka.Database.GetItemsAsync();
+            getznamka = await Tabulka.Database.GetItemsAsync<T>();
 
             return getznamka;
 
         }
-        public static async Task SmazatZnamku(Znamky znamka)
+        public static async Task Smazat<T>(T znamka) where T : ATabulka, new()
         {
             await Tabulka.Database.DeleteItemAsync(znamka);
 
-        }*/
+        }
     }
 }
