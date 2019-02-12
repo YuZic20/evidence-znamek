@@ -12,11 +12,16 @@ namespace App6
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-
+            NewPage();
+        }
+        private async void NewPage()
+        {
+            await Navigation.PushAsync(new NavigationPage(new Page1()));
         }
     }
 }

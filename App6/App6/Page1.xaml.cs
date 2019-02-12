@@ -17,5 +17,10 @@ namespace App6
 			InitializeComponent ();
 
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }

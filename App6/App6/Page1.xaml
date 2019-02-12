@@ -4,9 +4,13 @@
              x:Class="App6.Page1">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label>Známka</Label>
+            <Entry x:Name="znamka"></Entry>
+            <Label>Váha</Label>
+            <Entry x:Name="vaha"></Entry>
+            <Label>id predmět</Label>
+            <Entry x:Name="predmet"></Entry>
+            <Button Clicked="Button_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
