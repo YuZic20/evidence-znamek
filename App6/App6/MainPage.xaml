@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App6"
+             x:Class="App6.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button Clicked="Button_Clicked" Text="Nastroje" Grid.Row="0" Grid.ColumnSpan="2" ></Button>
+            <StackLayout Spacing="10" x:Name="LeftStock" Grid.Column="0" Grid.Row="1">
+                
+            </StackLayout>
+            <StackLayout Spacing="10" x:Name="RigtStock" Grid.Column="1" Grid.Row="1">
+
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
