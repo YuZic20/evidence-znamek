@@ -75,7 +75,7 @@ namespace ConsoleApp5
                 {
                     foreach(Predmet predmet in Predmety)
                     {
-                        Console.WriteLine(predmet.Id + "  " + predmet.Nazev);
+                        Console.WriteLine(predmet.Id-1 + "  " + predmet.Nazev);
                     }
                     Console.WriteLine("Předmět, zadej id");
                     input = Console.ReadLine();
@@ -143,7 +143,7 @@ namespace ConsoleApp5
                     Znamka = new TrippleInt();
                     Znamka.A = Znamky[i].IdPredmet;
                     Znamka.B = Znamky[i].Znamka * Znamky[i].Vaha;
-                    Znamka.C = 1 + Znamky[i].Vaha;
+                    Znamka.C = Znamky[i].Vaha;
                     ListOfPred[Znamky[i].IdPredmet] = Znamka;
                     Znamka = ListOfPred[Znamky[i].IdPredmet];
                 }
@@ -154,7 +154,7 @@ namespace ConsoleApp5
 
                     Znamka.A = Znamky[i].IdPredmet;
                     Znamka.B = ListOfPred[Znamka.A].B + Znamky[i].Znamka * Znamky[i].Vaha;
-                    Znamka.C = Znamka.C + 1 + Znamky[i].Vaha;
+                    Znamka.C = Znamka.C + Znamky[i].Vaha;
                     ListOfPred[Znamky[i].IdPredmet] = Znamka;
                 }
                 

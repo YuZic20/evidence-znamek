@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ClassLibrary1;
 
 namespace App6
 {
@@ -18,9 +19,28 @@ namespace App6
 
 		}
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async  Task Button_Clicked(object sender, EventArgs e)
         {
-            
+            int TestZnamka;
+            int TestVaha;
+            int TestPredmet;
+            bool isNumeric1 = int.TryParse(znamka.Text, out TestZnamka);
+            bool isNumeric2 = int.TryParse(vaha.Text, out TestVaha);
+            bool isNumeric3 = int.TryParse(predmet.Text, out TestPredmet);
+
+            if (isNumeric1 && isNumeric2 && isNumeric3)
+            {
+                await AddZnamkaAsync(TestZnamka, TestVaha, TestPredmet);
+                
+            }
+        }
+        private async Task AddZnamkaAsync(int znamka, int vaha, int predmet)
+        {
+            Znamky AddZnamka = new Znamky();
+            AddZnamka.Znamka = znamka;
+            AddZnamka.Vaha = vaha;
+            AddZnamka.IdPredmet = predmet;
+            await ZnamkaHndle.PridatUpravit(AddZnamka);
         }
     }
 }

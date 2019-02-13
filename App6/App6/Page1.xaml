@@ -10,7 +10,7 @@
             <Entry x:Name="vaha"></Entry>
             <Label>id predmět</Label>
             <Entry x:Name="predmet"></Entry>
-            <Button Clicked="Button_Clicked"></Button>
+            <Button Clicked="Button_Clicked" Text="Přidat"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
