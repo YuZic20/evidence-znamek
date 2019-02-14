@@ -3,7 +3,7 @@ using System;
 
 namespace ClassLibrary1
 {
-    public class Znamky: ATabulka
+    public class Mark: ATable
     {
         
         public int IdPredmet { get; set; }

@@ -33,8 +33,8 @@ namespace ConsoleApp5
              await Tabulka.Database.SaveItemAsync<Predmet>(fyzika);
              fyzika2 = await Tabulka.Database.GetItemAsync<Predmet>(2);
              */
-            List<Znamky> Znamky = await ZnamkaHndle.Ziskat<Znamky>();
-            List<Predmet> Predmety = await ZnamkaHndle.Ziskat<Predmet>();
+            List<Mark> Znamky = await Table.Database.GetItemsAsync<Mark>();
+            List<Class> Predmety = await Table.Database.GetItemsAsync<Class>();
 
             
 
@@ -56,7 +56,7 @@ namespace ConsoleApp5
 
             if(value == 1)
             {
-                Znamky NewZnamka = new Znamky();
+                Mark NewZnamka = new Mark();
                 
                 while (true)
                 {
@@ -73,7 +73,7 @@ namespace ConsoleApp5
 
                 while (true)
                 {
-                    foreach(Predmet predmet in Predmety)
+                    foreach(Class predmet in Predmety)
                     {
                         Console.WriteLine(predmet.Id-1 + "  " + predmet.Nazev);
                     }
@@ -98,7 +98,7 @@ namespace ConsoleApp5
                     }
                 }
                 NewZnamka.Znamka = value;
-                await Tabulka.Database.SaveItemAsync<Znamky>(NewZnamka);
+                await Table.Database.SaveItemAsync<Mark>(NewZnamka);
             }else if (value == 2)
             {
                 while (true)
@@ -116,7 +116,7 @@ namespace ConsoleApp5
                         }
                     }
                 }
-                await Tabulka.Database.DeleteItemAsync<Znamky>(Znamky[value]);
+                await Table.Database.DeleteItemAsync<Mark>(Znamky[value]);
 
 
             }
@@ -124,14 +124,14 @@ namespace ConsoleApp5
 
             
         }
-        static void PrintList(List<Znamky> Znamky, List<Predmet> Predmety)
+        static void PrintList(List<Mark> Znamky, List<Class> Predmety)
         {
             for(int i = 0; i < Znamky.Count(); i++)
             {
                 Console.WriteLine(Znamky[i].Id + "  " + Predmety[Znamky[i].IdPredmet] + "  " + Znamky[i].Vaha + "  " + Znamky[i].Znamka);
             }
         }
-        static void PrintListPrumer(List<Znamky> Znamky, List<Predmet> Predmety)
+        static void PrintListPrumer(List<Mark> Znamky, List<Class> Predmety)
         {
             List<TrippleInt> ListOfPred = Enumerable.Repeat<TrippleInt>(null, Predmety.Count()).ToList();
             

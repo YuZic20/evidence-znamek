@@ -12,25 +12,25 @@ namespace ClassLibrary1
         public Database(string dbPath)
         {
             connection = new SQLiteAsyncConnection(dbPath);
-            connection.CreateTableAsync<Znamky>().Wait();
-            connection.CreateTableAsync<Predmet>().Wait();
+            connection.CreateTableAsync<Mark>().Wait();
+            connection.CreateTableAsync<Class>().Wait();
         }
-        public Task<List<T>> GetItemsAsync<T>() where T : ATabulka, new()
+        public Task<List<T>> GetItemsAsync<T>() where T : ATable, new()
         {
             return connection.Table<T>().ToListAsync();
         }
 
-        public Task<List<T>> GetItemsNotDoneAsync<T>() where T : ATabulka, new()
+        public Task<List<T>> GetItemsNotDoneAsync<T>() where T : ATable, new()
         {
             return connection.QueryAsync<T>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
-        public Task<T> GetItemAsync<T>(int id) where T : ATabulka, new()
+        public Task<T> GetItemAsync<T>(int id) where T : ATable, new()
         {
             return connection.Table<T>().Where(i => i.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task SaveItemAsync<T>(T item) where T : ATabulka, new()
+        public Task SaveItemAsync<T>(T item) where T : ATable, new()
         {
             if (item.Id != 0)
             {
@@ -42,7 +42,7 @@ namespace ClassLibrary1
             }
         }
 
-        public Task<int> DeleteItemAsync<T>(T item) where T : ATabulka, new()
+        public Task<int> DeleteItemAsync<T>(T item) where T : ATable, new()
         {
             return connection.DeleteAsync(item);
         }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Tabulka
+    public class Table
     {
         
         static Database database;

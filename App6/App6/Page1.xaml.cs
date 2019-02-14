@@ -36,11 +36,11 @@ namespace App6
         }
         private async Task AddZnamkaAsync(int znamka, int vaha, int predmet)
         {
-            Znamky AddZnamka = new Znamky();
+            Mark AddZnamka = new Mark();
             AddZnamka.Znamka = znamka;
             AddZnamka.Vaha = vaha;
             AddZnamka.IdPredmet = predmet;
-            await ZnamkaHndle.PridatUpravit(AddZnamka);
+            await Table.Database.SaveItemAsync(AddZnamka);
         }
     }
 }

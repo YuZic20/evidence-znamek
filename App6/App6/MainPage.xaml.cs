@@ -17,19 +17,24 @@ namespace App6
             PrintDataAsync();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            NewPage();
+            await NewPage();
         }
-        private async void NewPage()
+        private async Task NewPage()
         {
             await Navigation.PushAsync(new Page1());
          
         }
         public async Task PrintDataAsync()
+
         {
-            List<Znamky> ListZnamky = await ZnamkaHndle.Ziskat<Znamky>();
-            List<Predmet> ListPredmety = await ZnamkaHndle.Ziskat<Predmet>();
+
+
+
+
+            List<Mark> ListZnamky = await Table.Database.GetItemsAsync<Mark>();
+            List<Class> ListPredmety = await Table.Database.GetItemsAsync<Class>();
 
             LeftStock.Children.Clear();
             RigtStock.Children.Clear();
@@ -49,15 +54,15 @@ namespace App6
            await PrintPrumerAsync();
         }
 
-        private void Button_Clicked_1(object sender, EventArgs e)
+        private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            PrintDataAsync();
+            await PrintDataAsync();
         }
         
         private async Task PrintPrumerAsync()
         {
-            List<Znamky> ListZnamky = await ZnamkaHndle.Ziskat<Znamky>();
-            List<Predmet> ListPredmety = await ZnamkaHndle.Ziskat<Predmet>();
+            List<Mark> ListZnamky = await Table.Database.GetItemsAsync<Mark>();
+            List<Class> ListPredmety = await Table.Database.GetItemsAsync<Class>();
 
             List<TrippleInt> ListOfPred = Enumerable.Repeat<TrippleInt>(null, ListPredmety.Count()).ToList();
 

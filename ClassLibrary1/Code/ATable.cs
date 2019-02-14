@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public abstract class ATabulka
+    public abstract class ATable
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

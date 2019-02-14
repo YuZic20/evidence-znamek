@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibrary1
 {
-    public class Predmet: ATabulka
+    public class Class: ATable
     {
 
         public string Nazev { get; set; }
