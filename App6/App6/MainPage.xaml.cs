@@ -40,18 +40,28 @@ namespace App6
             RigtStock.Children.Clear();
             for (int i = 0; i < ListZnamky.Count(); i++)
             {
-                //Console.WriteLine(Znamky[i].Id + "  " + Predmety[Znamky[i].IdPredmet] + "  " + Znamky[i].Vaha + "  " + Znamky[i].Znamka);
+                //Console.WriteLine(ListZnamky[i].Id + "  " + ListPredmety[ListZnamky[i].IdPredmet] + "  " + ListZnamky[i].Vaha + "  " + ListZnamky[i].Znamka);
                 Label Left = new Label();
-                Left.Text = ListZnamky[i].Znamka.ToString();
+                Left.Text = ListZnamky[i].Znamka.ToString() + " " + ListPredmety[ListZnamky[i].IdPredmet].Name; 
                 LeftStock.Children.Add(Left);
-
+                /*
                 Label Right = new Label();
-                Right.Text = ListPredmety[ListZnamky[i].IdPredmet].Nazev;
+                Right.Text = ListPredmety[ListZnamky[i].IdPredmet].Name;
                 RigtStock.Children.Add(Right);
-
+                */
 
             }
-           await PrintPrumerAsync();
+
+            Label Left2 = new Label();
+            Label Right2 = new Label();
+            Left2.Text = "";
+            Right2.Text = "";
+            LeftStock.Children.Add(Left2);
+            RigtStock.Children.Add(Right2);
+
+
+
+            await PrintPrumerAsync();
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
@@ -92,19 +102,21 @@ namespace App6
 
             }
 
+
+
             foreach (TrippleInt prumer in ListOfPred)
             {
                 if (prumer != null)
                 {
                     Double prumernum = (double)prumer.B / (double)prumer.C;
                     Label Left = new Label();
-                    Left.Text = prumernum.ToString();
+                    Left.Text = prumernum.ToString() + " " + ListPredmety[prumer.A].Name; ;
                     LeftStock.Children.Add(Left);
-
+                    /*
                     Label Right = new Label();
-                    Right.Text = ListPredmety[prumer.A].Nazev;
+                    Right.Text = ListPredmety[prumer.A].Name;
                     RigtStock.Children.Add(Right);
-                    
+                    */
                 }
 
             }

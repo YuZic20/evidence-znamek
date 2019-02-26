@@ -8,7 +8,7 @@ namespace ClassLibrary1
     public class Class: ATable
     {
 
-        public string Nazev { get; set; }
+        public string Name { get; set; }
 
     }
 }

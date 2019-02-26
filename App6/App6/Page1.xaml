@@ -3,14 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App6.Page1">
     <ContentPage.Content>
-        <StackLayout>
-            <Label>Známka</Label>
-            <Entry x:Name="znamka"></Entry>
-            <Label>Váha</Label>
-            <Entry x:Name="vaha"></Entry>
-            <Label>id predmět</Label>
-            <Entry x:Name="predmet"></Entry>
-            <Button Clicked="Button_Clicked" Text="Přidat"></Button>
-        </StackLayout>
+        
+            <StackLayout>
+                <Label>Známka</Label>
+                <Entry x:Name="znamka"></Entry>
+                <Label>Váha</Label>
+                <Entry x:Name="vaha"></Entry>
+                <Label>id predmět</Label>
+                <ListView x:Name="predment">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Button Clicked="Button_Clicked" Text="Přidat"></Button>
+                <Label></Label>
+                <Label>Přidat nový předmět</Label>
+                <Entry x:Name="novypredmet"></Entry>
+                <Button Clicked="Button_Clicked_1" Text="Přidat"></Button>
+            </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

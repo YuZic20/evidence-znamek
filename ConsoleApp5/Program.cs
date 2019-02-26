@@ -75,7 +75,7 @@ namespace ConsoleApp5
                 {
                     foreach(Class predmet in Predmety)
                     {
-                        Console.WriteLine(predmet.Id-1 + "  " + predmet.Nazev);
+                        Console.WriteLine(predmet.Id-1 + "  " + predmet.Name);
                     }
                     Console.WriteLine("Předmět, zadej id");
                     input = Console.ReadLine();
@@ -171,7 +171,7 @@ namespace ConsoleApp5
             {
                 if (prumer != null)
                 {
-                    Console.WriteLine(Predmety[prumer.A].Nazev + "  " + ((double)prumer.B / (double)prumer.C));
+                    Console.WriteLine(Predmety[prumer.A].Name + "  " + ((double)prumer.B / (double)prumer.C));
                 }
                 
             }
